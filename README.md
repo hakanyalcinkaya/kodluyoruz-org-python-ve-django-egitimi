@@ -1,5 +1,5 @@
-# kodluyoruz.org - Python ve Django Eğitimi
-## kodluyoruz.org 6 Temmuz 2019 Tarihinde Başlayacak Olan Python ve Django Eğitimi Notlarını İçerir
+# Kodluyoruz.org - Python ve Django Framework Eğitimi
+## [Kodluyoruz.org](https://kodluyoruz.org/) - 6 Temmuz 2019 Tarihinde Başlayacak Olan Python ve Django Framework Eğitimi Notlarını İçerir
 
 
 ### Eğitim İçeriği:
