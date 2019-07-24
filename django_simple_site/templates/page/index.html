@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Index Page{% endblock %}
+
+{% comment %}
+    Eger extends kullanildiysa tum icerikler block icinde tutulmali
+{% endcomment %}
+    
+{% block container %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Index</h1>
+            <h2>Names:</h2>
+            <ul>
+                {% for item in names %}
+                
+                {% if 'Kodluyoruz' in item  %}
+                    <li class="text-primary">{{ item|safe }}</li>
+                {% else %}
+                    <li>{{ item }}</li>
+                {% endif %}
+
+                {% empty %}
+                <li>Isim Bulunamadi</li>
+                {% endfor %}
+            </ul>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, excepturi aperiam. Facilis molestiae laboriosam aperiam, doloribus amet labore magni, sint eveniet autem quos blanditiis necessitatibus repellat voluptate sequi distinctio eos.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
