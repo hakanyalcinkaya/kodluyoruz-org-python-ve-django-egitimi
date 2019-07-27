@@ -1,0 +1,315 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 py-5 d-none d-lg-block d-md-none d-sm-none">
+                <h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><h3>Anasayfa</h3></li>
+                        <li class="list-group-item">Keşfet</li>
+                        <li class="list-group-item">bildirimler</li>
+                        <li class="list-group-item">Mesajlar</li>
+                        <li class="list-group-item">Yer İşaretleri</li>
+                        <li class="list-group-item">Listeler</li>
+                        <li class="list-group-item">Profil</li>
+                        <li class="list-group-item">Daha fazla</li>
+                        <li class="list-group-item"><a href="/logout/" class="btn btn-primary">Logout</a></li>
+                      </ul>
+                </h4>
+            </div>
+            <div class="col-3 float-sm-left d-none py-5 d-block d-lg-none d-md-block d-sm-block">
+                <h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><h3>A</h3></li>
+                        <li class="list-group-item">K</li>
+                        <li class="list-group-item">B</li>
+                        <li class="list-group-item">M</li>
+                        <li class="list-group-item">Y</li>
+                        <li class="list-group-item">L</li>
+                        <li class="list-group-item">P</li>
+                        <li class="list-group-item">DF</li>
+                        <li class="list-group-item"><button type="button" class="btn btn-primary">Tw</button></li>
+                      </ul>
+                </h4>
+            </div>
+
+            <div class="col-9 col-md-9 col-lg-6 col-sm-9 d-md-block d-sm-block py-5">
+                <h3>piKapiKa</h3>
+                    <div class="list-group">
+                    <div type="text" data-toggle="modal" data-target="#exampleModal">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="row">
+                                <div class="col-2">
+                                        <img class="rounded-circle" src="https://picsum.photos/id/1/60/60" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">@username</h5>
+                                    <small>3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                    <div class="buttons">
+                                        <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                                                <img src="https://i.ibb.co/zHnYJtr/reply.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                        <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                <img src="https://i.ibb.co/Swj1ffp/retweet.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                        <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                <img src="https://i.ibb.co/SNH6BbZ/like.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                        <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                                                <img src="https://i.ibb.co/B4MPwd3/share.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      ...
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        <a href="#" class="list-group-item list-group-item-action">
+                                <div class="row">
+                                    <div class="col-2">
+                                            <img class="rounded-circle" src="https://picsum.photos/id/1/60/60" alt="">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">@username</h5>
+                                        <small>3 days ago</small>
+                                        </div>
+                                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                        <div class="buttons">
+                                            <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                                                    <img src="img/reply.png" alt="" width="15" height="15" style="border: none">
+                                                    <span class="badge badge-primary"></span>
+                                            </button>
+                                            <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                    <img src="img/retweet.png" alt="" width="15" height="15" style="border: none">
+                                                    <span class="badge badge-primary"></span>
+                                            </button>
+                                            <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                    <img src="img/like.png" alt="" width="15" height="15" style="border: none">
+                                                    <span class="badge badge-primary"></span>
+                                            </button>
+                                            <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                                                    <img src="img/share.png" alt="" width="15" height="15" style="border: none">
+                                                    <span class="badge badge-primary"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                                                    <a href="#" class="list-group-item list-group-item-action">
+                            <div class="row">
+                                <div class="col-2">
+                                        <img class="rounded-circle" src="http://lorempixel.com/60/60/sports" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">@username</h5>
+                                    <small>3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                    <div class="buttons">
+                                        <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                                                <img src="img/reply.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                        <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                <img src="img/retweet.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                        <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                <img src="img/like.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                        <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                                                <img src="img/share.png" alt="" width="15" height="15" style="border: none">
+                                                <span class="badge badge-primary"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="row">
+                                        <div class="col-2">
+                                                <img class="rounded-circle" src="http://lorempixel.com/60/60/sports" alt="">
+                                        </div>
+                                        <div class="col-10">
+                                            <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">@username</h5>
+                                            <small>3 days ago</small>
+                                            </div>
+                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                            <div class="buttons">
+                                                <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                                                        <img src="img/reply.png" alt="" width="15" height="15" style="border: none">
+                                                        <span class="badge badge-primary"></span>
+                                                </button>
+                                                <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                        <img src="img/retweet.png" alt="" width="15" height="15" style="border: none">
+                                                        <span class="badge badge-primary"></span>
+                                                </button>
+                                                <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                        <img src="img/like.png" alt="" width="15" height="15" style="border: none">
+                                                        <span class="badge badge-primary"></span>
+                                                </button>
+                                                <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                                                        <img src="img/share.png" alt="" width="15" height="15" style="border: none">
+                                                        <span class="badge badge-primary"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                    <img class="rounded-circle" src="http://lorempixel.com/60/60/sports" alt="">
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">@username</h5>
+                                                <small>3 days ago</small>
+                                                </div>
+                                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                                <div class="buttons">
+                                                    <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                                                            <img src="img/reply.png" alt="" width="15" height="15" style="border: none">
+                                                            <span class="badge badge-primary"></span>
+                                                    </button>
+                                                    <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                            <img src="img/retweet.png" alt="" width="15" height="15" style="border: none">
+                                                            <span class="badge badge-primary"></span>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                            <img src="img/like.png" alt="" width="15" height="15" style="border: none">
+                                                            <span class="badge badge-primary"></span>
+                                                    </button>
+                                                    <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                                                            <img src="img/share.png" alt="" width="15" height="15" style="border: none">
+                                                            <span class="badge badge-primary"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                        <img class="rounded-circle" src="http://lorempixel.com/60/60/sports" alt="">
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1">@username</h5>
+                                                    <small>3 days ago</small>
+                                                    </div>
+                                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                                    <div class="buttons">
+                                                        <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                                                                <img src="img/reply.png" alt="" width="15" height="15" style="border: none">
+                                                                <span class="badge badge-primary"></span>
+                                                        </button>
+                                                        <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                                <img src="img/retweet.png" alt="" width="15" height="15" style="border: none">
+                                                                <span class="badge badge-primary"></span>
+                                                        </button>
+                                                        <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                                                                <img src="img/like.png" alt="" width="15" height="15" style="border: none">
+                                                                <span class="badge badge-primary"></span>
+                                                        </button>
+                                                        <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                                                                <img src="img/share.png" alt="" width="15" height="15" style="border: none">
+                                                                <span class="badge badge-primary"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+        </div>
+            </div>
+
+
+            <div class="col-md-3 col-lg-3 py-5 d-none d-lg-block d-md-none d-sm-none">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    </div>
+                  </div>
+                  <ul class="list-group">
+                      <h3>Türkiye Gündemleri</h3>
+                    <li class="list-group-item">#tt1</li>
+                    <li class="list-group-item">#tt2</li>
+                    <li class="list-group-item">#tt3</li>
+                    <li class="list-group-item">#tt4</li>
+                    <li class="list-group-item">#tt5</li>
+                    <li class="list-group-item"><button type="button" class="btn btn-primary">Daha fazla göster</button></li>
+                  </ul>
+                  <div class="my-3 p-3 bg-white rounded shadow-sm">
+                        <h6 class="border-bottom border-gray pb-2 mb-0">Suggestions</h6>
+                        <div class="media text-muted pt-3">
+                          <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+                          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <strong class="text-gray-dark">Full Name</strong>
+                              <a href="#">Follow</a>
+                            </div>
+                            <span class="d-block">@username</span>
+                          </div>
+                        </div>
+                        <div class="media text-muted pt-3">
+                          <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+                          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <strong class="text-gray-dark">Full Name</strong>
+                              <a href="#">Follow</a>
+                            </div>
+                            <span class="d-block">@username</span>
+                          </div>
+                        </div>
+                        <div class="media text-muted pt-3">
+                          <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+                          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <strong class="text-gray-dark">Full Name</strong>
+                              <a href="#">Follow</a>
+                            </div>
+                            <span class="d-block">@username</span>
+                          </div>
+                        </div>
+                        <small class="d-block text-right mt-3">
+                          <a href="#">All suggestions</a>
+                        </small>
+                      </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

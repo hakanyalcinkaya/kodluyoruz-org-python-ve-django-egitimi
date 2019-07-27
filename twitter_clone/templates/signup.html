@@ -1,0 +1,114 @@
+{% extends 'base/base.html' %}
+
+{% comment %}
+title eklemeyi unutma
+{% endcomment %}
+
+{# tek satir aciklama #}
+
+{% block content %}
+
+<!-- HTML aciklama -->
+{# PYTHON - Django aciklama #}
+
+    <div class="container-fluid pl-0 pr-0 border-bottom border-light shadow-sm" style="background-color: white">
+      <div class="container" style="background-color: white !important;">
+        <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white flex-fill">
+                    <a class="navbar-brand pr-0" href="#">
+                        <img src="http://pluspng.com/img-png/twitter-logo-png-icons-logos-emojis-tech-companies-1687.png" width="30" height="30" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link pl-0" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkimizda</a>
+                    </li>
+                    </ul>
+                    <div class="nav-item dropdown text-dark">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black">
+                            Dil: Turkce
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+<!-- navbar start -->
+
+    <!-- navbar end -->
+    <div class="row border border-light shadow-sm mt-3" style="background-color: white">
+            <div class="col-2"></div>
+            <div class="col-8 mt-4">
+                <h4>Twitter'a giris yap</h4>
+                <form class="mt-4 ml-3" method="POST">
+                    {% if error %}
+                    <hr>
+                    <div>{{ error }}</div>
+                    <hr>
+                    {% endif %}
+                  {% csrf_token %}
+                    <form class="form-inline">
+                        <div class="form-group row">
+                        <div class="col col-md-6 col-lg-6 d-sm-block">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1 input-medium">Kullanici Adi</label>
+                          <input name="username" type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telefon, e-posta veya kullanıcı adı">                        
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1 input-medium">Email addresi</label>
+                          <input name="email" type="email" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telefon, e-posta veya kullanıcı adı">                        
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Sifre</label>
+                          <input name="password1" type="password" class="form-control border border-primary" id="exampleInputPassword1" placeholder="Sifre">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Sifre Tekrar</label>
+                            <input name="password2" type="password" class="form-control border border-primary" id="exampleInputPassword1" placeholder="Sifre">
+                          </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Beni hatirla</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Giris yap</button>
+                    </div>
+                    </div>
+                        </form>
+                      </form>
+            </div>
+            <div class="col-2"></div>
+    </div>
+    <div class="row" style="background-color: #f5f8fa">
+        <div class="col-2"></div>
+        <div class="col-8 mt-3 mb-3">
+            <div class="info">
+                    <p class="signup-helper">
+                      Twitter'da yeni misin?
+                      <a id="login-signup-link" href="https://twitter.com/signup">Hemen kaydol »</a>
+                    </p>
+                    <p class="sms-helper">
+                      Twitter'ı zaten kısa mesaj yoluyla mı kullanıyorsun?
+                      <a href="/account/complete">Hesabını etkinleştir »</a>
+                    </p>
+                  </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    </div>
+
+{% endblock content %}

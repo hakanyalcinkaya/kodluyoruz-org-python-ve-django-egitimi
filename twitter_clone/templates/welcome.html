@@ -1,0 +1,92 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+      <div class="container-fluid pl-0 pr-0">
+  <div class="row">
+      <div class="col-6 d-none d-lg-block d-sm-none" >
+          <div class="col" style="height: 200%; background-image: url('https://i.imgur.com/wk1yXhV.png')"></div>
+      </div>
+      <div class="col col-md-6 col-lg-6 d-sm-block">
+          <form class="ml-2" method="POST">
+                {% csrf_token %}
+            <div class="form-row align-items-center mt-4">
+                <div class="col-auto" style="width: 35%">
+                <label class="sr-only" for="inlineFormInput"></label>
+                <input name="username" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="kullanıcı adı">
+                </div>
+                <div class="col-auto" style="width: 35%">
+                <label class="sr-only" for="inlineFormInputGroup">Sifre</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input name="password" type="password" class="form-control" id="inlineFormInputGroup" placeholder="Sifre">
+                </div>
+                </div>
+                <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </div>
+            <a href="#" class="text-secondary">Sifreni mi unuttun?</a>
+            {% if error %}
+            <hr>
+            <div>{{ error }}</div>
+            <hr>
+            {% endif %}
+        </form>
+
+        <div class="row h-100">
+            <div class="col-2"></div>
+                <div id="col-8" class="col-8 my-auto" style="margin-bottom: auto; margin-top: auto; display: inline-block; vertical-align: middle">
+                    <img src="http://pluspng.com/img-png/twitter-logo-png-icons-logos-emojis-tech-companies-1687.png" width="60" height="60" alt="">
+                    <h3>Su anda dunyada neler olup bittigini gor</h3>
+                    <br class="m-4">
+                    <h5>Twitter'a bugun katil</h5>
+                    <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Kaydol</button> -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalContactForm">
+                            Kaydol
+                    </button>
+                        
+                        <!-- Modal -->
+                    
+                    <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header ml-3">
+                            <h4 class="modal-title w-100 font-weight-bold">Kaydol</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3">
+                            <div class="md-form">
+                            <i class="fas fa-user prefix grey-text"></i>
+                            <input type="text" id="form34" class="form-control validate" placeholder="Adin ve Soyadin">
+                            <label data-error="wrong" data-success="right" for="form34"></label>
+                            </div>
+
+                            <div class="md-form">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" id="form29" class="form-control validate" placeholder="E-mail adresin">
+                            <label data-error="wrong" data-success="right" for="form29"></label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Kaydol</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-lg btn-block mt-3">Giris yap</button>
+                </div>
+                <div class="col-2"></div>
+                </div>
+      </div>
+  </div>
+</div>
+
+
+{% endblock content %}
