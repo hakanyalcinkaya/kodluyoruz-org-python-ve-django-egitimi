@@ -1,7 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import (
+    render, 
+    redirect,
+    get_object_or_404,
+)
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.utils.crypto import get_random_string
+from user_profile.models import PasswordToken
 
 
 def logout_view(request):
@@ -79,5 +85,22 @@ def signup(request):
 def forget(request):
     if request.method == "POST":
         email = request.POST.get('email')
-        print(email)
+        token = get_random_string(length=16).lower()
+        # user = User.objects.get(email=email)
+        user = get_object_or_404(User, email=email)
+        pass_token = PasswordToken.objects.create(
+            user=user,
+            token=token,
+        )
+        messages.success(request, 'mail gonderildi')
+        return redirect('/')
     return render(request, 'forget.html', dict() )
+
+
+def forget_password_check(request, token):
+    get_object_or_404(PasswordToken, token=token)
+    return render(
+        request, 
+        'forget_password_check.html',
+        dict()
+        )
