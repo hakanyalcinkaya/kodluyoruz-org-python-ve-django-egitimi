@@ -42,32 +42,35 @@ def index(request):
 def signup(request):
     context = dict()
     if request.method == "POST":
-        print(request.POST)
         username = request.POST.get('username')
         email = request.POST.get('email')
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
+        error = False
         if password1 != password2:
             messages.warning(request, "Sifreniz yanlis")
-            return render(request, 'signup.html', context)
-        elif User.objects.filter(email=email).count():
+            error = True
+        if User.objects.filter(email=email).count():
             messages.warning(request, "E-mail adresiniz mevcut")
-            return redirect('/signup/')
-        elif User.objects.filter(username=username).count():
+            error = True
+        if User.objects.filter(username=username).count():
             messages.warning(request, "Kullanici Adi mevcut")
+            error = True
+        
+        if error:
             return redirect('/signup/')
-        else:
-            User.objects.create_user(
-                username,
-                email,
-                password1
-            )
-            user = authenticate(
-                username=username, 
-                password=password1
-            )
-            if user is not None:
-                login(request, user)
-                return redirect('/')
+
+        User.objects.create_user(
+            username,
+            email,
+            password1
+        )
+        user = authenticate(
+            username=username, 
+            password=password1
+        )
+        if user is not None:
+            login(request, user)
+            return redirect('/')
 
     return render(request, 'signup.html', context)

@@ -55,13 +55,7 @@ title eklemeyi unutma
             <div class="col-2"></div>
             <div class="col-8 mt-4">
                 <h4>Twitter'a giris yap</h4>
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                
                 <form class="mt-4 ml-3" method="POST">
                     {% if error %}
                     <hr>
