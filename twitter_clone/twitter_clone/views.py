@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def logout_view(request):
@@ -47,8 +48,14 @@ def signup(request):
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
         if password1 != password2:
-            context['error'] = "Sifreniz yanlis"
+            messages.warning(request, "Sifreniz yanlis")
             return render(request, 'signup.html', context)
+        elif User.objects.filter(email=email).count():
+            messages.warning(request, "E-mail adresiniz mevcut")
+            return redirect('/signup/')
+        elif User.objects.filter(username=username).count():
+            messages.warning(request, "Kullanici Adi mevcut")
+            return redirect('/signup/')
         else:
             User.objects.create_user(
                 username,
