@@ -92,15 +92,22 @@ def forget(request):
             user=user,
             token=token,
         )
+        # twitter.com/forget/hrhrhrdkzfhsdkzhfs/
+        # localhost:8000/forget/<slug:token>/
+        # localhost:8000/forget/1111/
+        # localhost:8000/forget/<id:token>/
         messages.success(request, 'mail gonderildi')
         return redirect('/')
     return render(request, 'forget.html', dict() )
 
 
-def forget_password_check(request, token):
-    print(token)
-    token_obj = get_object_or_404(
-        PasswordToken, token=token
+def forget_password_check(request, password_token):
+    # token_obj = get_object_or_404(
+    #     PasswordToken, token=token
+    # )
+
+    token_obj = PasswordToken.objects.get(
+        token=password_token
     )
     
     return render(
