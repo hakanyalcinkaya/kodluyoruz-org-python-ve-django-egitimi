@@ -98,9 +98,13 @@ def forget(request):
 
 
 def forget_password_check(request, token):
-    get_object_or_404(PasswordToken, token=token)
+    print(token)
+    token_obj = get_object_or_404(
+        PasswordToken, token=token
+    )
+    
     return render(
         request, 
         'forget_password_check.html',
-        dict()
+        {'token': token_obj}
         )
