@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post">
+                {% csrf_token %}
+                
+                <input 
+                type="email" 
+                name="email" 
+                id="" 
+                placeholder="email adresinizi girin"
+                >
+
+                <button class="btn btn-primary" type="submit">
+                    Sifremi Gonder
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

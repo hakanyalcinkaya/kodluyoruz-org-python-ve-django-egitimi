@@ -5,6 +5,7 @@ from .views import (
     signup,
     logout_view,
     welcome,
+    forget,
 )
 
 urlpatterns = [
@@ -12,6 +13,7 @@ urlpatterns = [
     path('index/', index, ),
     path('signup/', signup, ),
     path('logout/', logout_view, ),
+    path('forget/', forget, ),
     path('admin/', admin.site.urls),
 
 ]

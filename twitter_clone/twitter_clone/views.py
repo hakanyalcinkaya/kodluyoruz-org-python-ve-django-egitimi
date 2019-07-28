@@ -74,3 +74,10 @@ def signup(request):
             return redirect('/')
 
     return render(request, 'signup.html', context)
+
+
+def forget(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        print(email)
+    return render(request, 'forget.html', dict() )
