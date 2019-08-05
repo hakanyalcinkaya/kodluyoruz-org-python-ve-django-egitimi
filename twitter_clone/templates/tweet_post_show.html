@@ -1,0 +1,38 @@
+{% load humanize %}
+
+<a href="#" class="list-group-item list-group-item-action">
+    <div class="row">
+        <div class="col-2">
+                <img class="rounded-circle" src="http://lorempixel.com/60/60/sports" alt="">
+        </div>
+        <div class="col-10">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">@{{ item.user.username }} </h5>
+            {# <small>{{ item.updated_at|date:"d/m/y h:i A" }}</small>  #}
+            
+            <small>{{ item.updated_at|naturaltime  }}</small>
+            </div>
+            <p class="mb-1">
+                {{ item.post }}
+            </p>
+            <div class="buttons">
+                <button class="btn btn-outline-primary mr-4" style="border-color: transparent; padding: 3px">
+                        <img src="https://i.ibb.co/zHnYJtr/reply.png" alt="" width="15" height="15" style="border: none">
+                        <span class="badge badge-primary"></span>
+                </button>
+                <button class="btn btn-outline-success ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                        <img src="https://i.ibb.co/Swj1ffp/retweet.png" alt="" width="15" height="15" style="border: none">
+                        <span class="badge badge-primary"></span>
+                </button>
+                <button class="btn btn-outline-danger ml-4 mr-4" style="border-color: transparent; padding: 3px">
+                        <img src="https://i.ibb.co/SNH6BbZ/like.png" alt="" width="15" height="15" style="border: none">
+                        <span class="badge badge-primary"></span>
+                </button>
+                <button class="btn btn-outline-primary ml-4" style="border-color: transparent; padding: 3px">
+                        <img src="https://i.ibb.co/B4MPwd3/share.png" alt="" width="15" height="15" style="border: none">
+                        <span class="badge badge-primary"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</a>

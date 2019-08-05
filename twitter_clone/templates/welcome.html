@@ -8,7 +8,7 @@
           <div class="col" style="height: 200%; background-image: url('https://i.imgur.com/wk1yXhV.png')"></div>
       </div>
       <div class="col col-md-6 col-lg-6 d-sm-block">
-          <form class="ml-2" method="POST">
+          <form class="ml-2" method="POST" action="/user/login/">
                 {% csrf_token %}
             <div class="form-row align-items-center mt-4">
                 <div class="col-auto" style="width: 35%">
@@ -24,7 +24,7 @@
                 </div>
                 </div>
                 <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button type="submit" class="btn btn-primary mb-2">Giris Yap</button>
                 </div>
             </div>
             <a href="/forget/" class="text-secondary">Sifreni mi unuttun?</a>
