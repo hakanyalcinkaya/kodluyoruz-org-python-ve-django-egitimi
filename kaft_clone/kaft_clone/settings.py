@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third Party Apps:
+
+    # My Apps:
+    'cart',
+    'page',
+    'product',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +61,9 @@ ROOT_URLCONF = 'kaft_clone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +127,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+# Trello: TO_DO Plugin Test
+
+# python manage.py startapp cart
+# python manage.py startapp page
+# python manage.py startapp product
+
+# Trello: configure template folder
