@@ -140,5 +140,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # python manage.py startapp cart
 # python manage.py startapp page
 # python manage.py startapp product
-
-# Trello: configure template folder

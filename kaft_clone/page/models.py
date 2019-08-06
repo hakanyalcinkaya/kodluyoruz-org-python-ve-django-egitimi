@@ -1,8 +1,8 @@
 from django.db import models
 
 STATUS = [
-    # sol kisim DBye yazilacak olan
-    # sag kisim ise kullaniciya gozukecek
+    # left side: DB
+    # right side: human-readable name
     ('draft', 'Taslak'),
     ('published', 'Yayinlandi'),
     ('deleted', 'Silindi'),
