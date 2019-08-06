@@ -1,7 +1,25 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    
-    <h1>Content</h1>
+{% include 'home/carousel.html' %}
+
+<!-- MultiCursor ozelligini kesinlikle ogrenin -->
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3">
+            {% include 'product/product.html' %}
+        </div>
+        <div class="col-sm-3">
+            {% include 'product/product.html' %}
+        </div>
+        <div class="col-sm-3">
+            {% include 'product/product.html' %}
+        </div>
+        <div class="col-sm-3">
+            {% include 'product/product.html' %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

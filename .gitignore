@@ -11,6 +11,7 @@
 
 # Cache:
 */*/__pycache__/
+__pycache__/
 
 # DB:
 */db.sql*
