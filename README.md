@@ -41,3 +41,10 @@
 - [ ] Git Versiyon Kontrol Sistemi
 - [ ] GitHub Temel Kullanımı
 - [ ] Temel Linux Komutları
+
+
+### E-Ticatet Sitesi
+E-Ticaret sitesinde Django'daki bircok ozelligi kullanacagiz. Bu projenin tum videolari YouTube uzerinde yayinlanacak. 
+[E-Ticaret sitesi baslangic yapisina ulasmak icin tiklayiniz](https://github.com/hakanyalcinkaya/kodluyoruz-org-python-ve-django-egitimi/tree/e109eac113387a8bc0590298c6631aecfbaf6e91/kaft_clone)
+
+[YouTube Videolarina Ulasmak Icin Tiklayiniz](http://www.youtube.com/user/hakanyalcinkaya?sub_confirmation=1)
