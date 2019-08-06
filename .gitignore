@@ -15,3 +15,5 @@ __pycache__/
 
 # DB:
 */db.sql*
+
+media/
