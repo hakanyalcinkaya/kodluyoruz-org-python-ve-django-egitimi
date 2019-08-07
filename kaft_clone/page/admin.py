@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Page
+from .models import Page, Carousel
 
 
 class PageModify(admin.ModelAdmin):
@@ -19,3 +19,4 @@ class PageModify(admin.ModelAdmin):
 
 
 admin.site.register(Page, PageModify)
+admin.site.register(Carousel)
