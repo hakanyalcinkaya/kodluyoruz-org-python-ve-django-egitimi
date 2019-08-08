@@ -140,3 +140,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # python manage.py startapp cart
 # python manage.py startapp page
 # python manage.py startapp product
+
+
+"""
+TODO List:
+
+yonetici :
+- carousel
+page
+product
+category
+order
+
+
+kullanici:
+kullanici kaydi
+adres kaydi
+kredi karti islemi / iyzico -> SUCCESS - ERROR -> 100
+siparis takibi
+
+cart -> items
+"""
