@@ -11,6 +11,19 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 
+def carousel_list(request):
+    context = dict()
+    context['carousel'] = Carousel.objects.all()
+    return render(request, 'manage/carousel_list.html', context)
+
+
+def carousel_update(request, pk):
+    context = dict()
+    # kaft_clone.com/manage/carousel/1/edit
+    context['item'] = Carousel.objects.get(pk=pk)
+    return render(request, 'manage/carousel_update.html', context)
+
+
 # stuff not checked
 def carousel_create(request):
     context = dict()
