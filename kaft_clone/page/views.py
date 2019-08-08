@@ -15,12 +15,16 @@ def index(request):
 def carousel_create(request):
     context = dict()
     context['form'] = CarouselModelForm()
+    # item = Carousel.objects.first()
+    # context['form'] = CarouselModelForm(instance=item)
 
     if request.method == 'POST':
         print(request.POST)
         print(request.FILES.get('cover_image'))
-        carousel = Carousel.objects.create(
-            title=request.POST.get('title')
-        )
+        # create code is deleted
+        form = CarouselModelForm(request.POST, request.FILES)
+        print(form)
+        if form.is_valid():
+            form.save()
         messages.success(request, 'Birseyler eklendi ama ne oldu bilemiyorum')
     return render(request, 'manage/carousel_create.html', context)
