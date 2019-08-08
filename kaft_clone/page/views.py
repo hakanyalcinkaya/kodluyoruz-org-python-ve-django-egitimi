@@ -23,4 +23,4 @@ def carousel_create(request):
             title=request.POST.get('title')
         )
         messages.success(request, 'Birseyler eklendi ama ne oldu bilemiyorum')
-    return render(request, 'manage/carousel_create.html', {})
+    return render(request, 'manage/carousel_create.html', context)
