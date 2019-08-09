@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Carousel
+from .models import Carousel, Page
 from .forms import CarouselModelForm
 
 # User:
@@ -16,6 +16,13 @@ def index(request):
 def manage_list(request):
     context = dict()
     return render(request, 'manage/manage.html', context)
+
+
+def page_list(request):
+    context = dict()
+    context['items'] = Page.objects.all().order_by('-pk')
+    return render(request, 'manage/page_list.html', context)
+
 
 # Admin:
 def carousel_list(request):

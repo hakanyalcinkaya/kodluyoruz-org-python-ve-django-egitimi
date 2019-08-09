@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12 ">
+            <a href="{% url 'carousel_create' %}">Carousel - Create</a>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">pk</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Slug</th>
+                    <th scope="col">Cover Image</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in items %}
+
+                    <tr>
+                    <th scope="row">{{ item.pk }} </th>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.slug }}</td>
+                    <td>
+                        {% if item.cover_image %}
+                            <img src="{{ item.cover_image.url }}" class="w-100">
+                        {% else %}
+                            Gorsel Yok
+                        {% endif %}
+                    </td>
+                    <td>{{ item.content }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>
+                        <a href="{% url 'carousel_update' item.pk %}" class="btn btn-primary">Edit</a>
+                    </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
