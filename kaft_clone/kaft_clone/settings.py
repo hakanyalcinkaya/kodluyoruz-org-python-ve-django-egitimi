@@ -39,12 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Party Apps:
+    # 'django_extensions',
 
     # My Apps:
     'cart',
     'page',
     'product',
 ]
+
+if os.environ.get('DJANGO_DEBUG') == 'True':
+    INSTALLED_APPS += [
+        'django_extensions',
+    ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

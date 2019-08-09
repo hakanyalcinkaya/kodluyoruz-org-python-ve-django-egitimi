@@ -1,5 +1,5 @@
 .DS_Store
-
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -17,3 +17,4 @@ __pycache__/
 */db.sql*
 
 media/
+*_env/
