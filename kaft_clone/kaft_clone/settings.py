@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 if os.environ.get('DJANGO_DEBUG') == 'True':
+    # Hakan's Settings:
     INSTALLED_APPS += [
         'django_extensions',
     ]
