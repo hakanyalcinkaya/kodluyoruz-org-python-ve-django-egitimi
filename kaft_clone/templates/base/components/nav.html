@@ -16,8 +16,14 @@
                     Erkek
                 </a>
                 <div class="dropdown-menu " x-placement="bottom-start" >
-                    <a class="dropdown-item" href="#">T-Shirt</a>
-                    <a class="dropdown-item" href="#">Çanta</a>
+                    
+                  {% for item in categories %}
+                    {% if item.gender == "men" or item.gender == "unisex"  %}
+                    <a class="dropdown-item" href="{% url 'category_show' category_slug=item.slug %}">
+                      {{ item.title }}
+                    </a>
+                    {% endif %}
+                  {% endfor %}
                     
                 </div>
             </li>
@@ -26,8 +32,13 @@
                     Kadın
                 </a>
                 <div class="dropdown-menu " x-placement="bottom-start" >
-                    <a class="dropdown-item" href="#">T-Shirt</a>
-                    <a class="dropdown-item" href="#">Çanta</a>
+                  {% for item in categories %}
+                    {% if item.gender == "women" or item.gender == "unisex"  %}
+                    <a class="dropdown-item" href="{% url 'category_show' category_slug=item.slug %}">
+                      {{ item.title }}
+                    </a>
+                    {% endif %}
+                  {% endfor %}
                     
                 </div>
             </li>
@@ -36,9 +47,13 @@
                     Her Zaman
                 </a>
                 <div class="dropdown-menu " x-placement="bottom-start" >
-                    <a class="dropdown-item" href="#">T-Shirt</a>
-                    <a class="dropdown-item" href="#">Çanta</a>
-                    
+                  {% for item in categories %}
+                    {% if item.gender == "unisex"  %}
+                    <a class="dropdown-item" href="{% url 'category_show' category_slug=item.slug %}">
+                      {{ item.title }}
+                    </a>
+                    {% endif %}
+                  {% endfor %}
                 </div>
             </li>
           </ul>

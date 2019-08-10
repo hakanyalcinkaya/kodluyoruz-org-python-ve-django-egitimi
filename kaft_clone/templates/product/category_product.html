@@ -1,0 +1,17 @@
+<div class="card mb-3">
+  {% if item.cover_image %}
+  <img src="{{ item.cover_image.url }}" alt="Card image" class="w-100">
+  {% endif %}
+  <div class="card-body">
+    <p class="card-text">
+      {{ item.title }}
+    </p>
+  </div>
+  
+  <div class="card-body">
+    <a href="#" class="card-link">{{ item.price }}</a>
+    <a href="#" class="card-link">{{ item.stock }}</a>
+  </div>
+  
+</div>
+      

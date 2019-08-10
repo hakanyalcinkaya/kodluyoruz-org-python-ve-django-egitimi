@@ -2,7 +2,7 @@ from django.db import models
 from page.models import DEFAULT_STATUS, STATUS
 
 GENDER_CHOICE = [
-    ('man', 'Erkek'),
+    ('men', 'Erkek'),
     ('women', 'Kadin'),
     ('unisex', 'UniSex'),
 ]
@@ -24,11 +24,12 @@ class Category(models.Model):
         default="unisex",
         choices=GENDER_CHOICE,
     )
+    # order_field = models.SmallIntegerField(default=0)
     createt_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return f"{1000 + self.pk } - {self.gender} - {self.title}"
 
 
 class Product(models.Model):

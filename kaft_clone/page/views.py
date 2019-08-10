@@ -4,15 +4,21 @@ from django.utils.text import slugify
 from .models import Carousel, Page
 from .forms import CarouselModelForm, PageModelForm
 from django.contrib.admin.views.decorators import staff_member_required
+from product.models import Category
+
+STATUS = "published"
 
 
 # User:
 def index(request):
     context = dict()
     context['images'] = Carousel.objects.filter(
-        status="published",
+        status=STATUS,
     ).exclude(cover_image='')
-    # context['images'] = images
+
+    context['categories'] = Category.objects.filter(
+        status=STATUS
+    ).order_by('title')
     return render(request, 'home/index.html', context)
 
 
