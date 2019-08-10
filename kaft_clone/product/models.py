@@ -1,6 +1,12 @@
 from django.db import models
 from page.models import DEFAULT_STATUS, STATUS
 
+GENDER_CHOICE = [
+    ('man', 'Erkek'),
+    ('women', 'Kadin'),
+    ('unisex', 'UniSex'),
+]
+
 
 class Category(models.Model):
     title = models.CharField(max_length=200)
@@ -12,6 +18,11 @@ class Category(models.Model):
         default=DEFAULT_STATUS, 
         choices=STATUS,
         max_length=10,
+    )
+    gender = models.CharField(
+        max_length=6,
+        default="unisex",
+        choices=GENDER_CHOICE,
     )
     createt_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

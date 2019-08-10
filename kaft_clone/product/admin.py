@@ -8,10 +8,11 @@ class CategoryAdmin(admin.ModelAdmin):
         'pk',
         'title',
         'slug',
+        'gender',
         'status', 
         'updated_at',
     )
-    list_filter = ('status', )
+    list_filter = ('status', 'gender', )
     list_editable = (
         'title',
         'status', 
