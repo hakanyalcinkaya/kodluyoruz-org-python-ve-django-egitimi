@@ -16,9 +16,9 @@ def index(request):
         status=STATUS,
     ).exclude(cover_image='')
 
-    context['categories'] = Category.objects.filter(
-        status=STATUS
-    ).order_by('title')
+    # context['categories'] = Category.objects.filter(
+    #     status=STATUS
+    # ).order_by('title')
     return render(request, 'home/index.html', context)
 
 

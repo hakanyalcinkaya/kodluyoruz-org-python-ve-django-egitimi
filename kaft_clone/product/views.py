@@ -6,10 +6,10 @@ def category_show(request, category_slug):
     context = dict()
     context['category'] = get_object_or_404(Category, slug=category_slug)
     
-    # Nav:
-    context['categories'] = Category.objects.filter(
-        status=STATUS
-    ).order_by('title')
+    # # Nav:
+    # context['categories'] = Category.objects.filter(
+    #     status=STATUS
+    # ).order_by('title')
     context['items'] = Product.objects.filter(
         category=context['category'],
         status=STATUS,
