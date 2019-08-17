@@ -27,6 +27,7 @@ class ShoppingCart(models.Model):
     user = models.ForeignKey(
         User, blank=True, null=True, on_delete=models.CASCADE
     )
+    session_key = models.CharField(max_length=32, blank=True, null=True)
     items = models.ManyToManyField(ShoppingCartItem, blank=True)
     total_price = models.FloatField(default=0)
     status = models.CharField(
@@ -40,20 +41,30 @@ class ShoppingCart(models.Model):
     def __str__(self):
         return f"PK: {self.pk} - Total: {self.total_price} - Status: {self.status}"
 
-
+    def total_price_update(self):
+        if self.status == "waiting":
+            total_price = 0
+            for item in self.items.all():
+                if item.is_deleted == False:
+                    total_price += item.price
+            self.total_price = total_price
+            self.save()
+        
 
 @receiver(post_save, sender=ShoppingCartItem)
 def shopping_card_item_receiver(sender, instance, created, *args, **kwargs):
     if created:
         instance.price = instance.product.price
         instance.save()
-    print(sender)
+    instance.shoppingcart_set.last().total_price_update()
     print(kwargs)
     print(f"{'x' * 30}\nShoppingCartItem\n{'x' * 30}")
+    print(instance.shoppingcart_set.last().total_price)
 
 
 @receiver(m2m_changed, sender=ShoppingCart.items.through)
-def shopping_card_receiver(sender, *args, **kwargs):
+def shopping_card_receiver(sender, instance, *args, **kwargs):
+    instance.total_price_update()
     print(args)
     print(kwargs)
     print(f"{'x' * 30}\nShoppingCart\n{'x' * 30}")

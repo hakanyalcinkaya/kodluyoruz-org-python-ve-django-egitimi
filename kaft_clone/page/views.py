@@ -25,6 +25,8 @@ def index(request):
         status=STATUS,
     )
     context['products'] = products
+    # if not request.session.session_key:
+        # request.session.save()
 
     return render(request, 'home/index.html', context)
 

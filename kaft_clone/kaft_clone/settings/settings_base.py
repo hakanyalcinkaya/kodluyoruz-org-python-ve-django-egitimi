@@ -13,6 +13,8 @@ SECRET_KEY = '3jt1c)iasg-lt$z_nt*a5a!l&4d5idt(g-8bumxnk%axf)x=#s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SESSION_SAVE_EVERY_REQUEST = True
+
 ALLOWED_HOSTS = []
 
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'kaft_clone.middleware.session_check_middleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
