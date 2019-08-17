@@ -25,15 +25,18 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'pk',
         'title',
+        'cover_image',
         'price',
         'stock',
         'slug',
+        'is_home',
         'status', 
         'updated_at',
     )
     list_filter = ('status', )
     list_editable = (
         'title',
+        'is_home',
         'status', 
     )
 

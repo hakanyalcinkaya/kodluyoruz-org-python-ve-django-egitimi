@@ -77,7 +77,7 @@
                 <ul class="list-unstyled">
                     {% for item in pages %}
                     <li>
-                        <a href="">
+                        <a href="{% url 'page_show' slug=item.slug %}">
                         {{ item.title }}    
                         </a>
                     </li>

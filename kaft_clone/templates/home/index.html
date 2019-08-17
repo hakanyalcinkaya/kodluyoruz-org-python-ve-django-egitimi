@@ -8,18 +8,12 @@
 
 <div class="container mt-5">
     <div class="row">
+        {% for item in products %}
         <div class="col-sm-3">
             {% include 'product/product.html' %}
         </div>
-        <div class="col-sm-3">
-            {% include 'product/product.html' %}
-        </div>
-        <div class="col-sm-3">
-            {% include 'product/product.html' %}
-        </div>
-        <div class="col-sm-3">
-            {% include 'product/product.html' %}
-        </div>
+        {% endfor %}
+        
     </div>
 </div>
 

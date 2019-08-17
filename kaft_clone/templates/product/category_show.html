@@ -7,9 +7,11 @@
             <h2>{{ category.title }}</h2>
             <div class="row">
                 {% for item in items %}
+                    {% if item.cover_image %}
                     <div class="col-sm-4">
-                        {% include 'product/category_product.html' %}
+                        {% include 'product/product.html' %}
                     </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

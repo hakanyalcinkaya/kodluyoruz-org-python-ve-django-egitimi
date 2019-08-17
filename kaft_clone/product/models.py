@@ -50,6 +50,7 @@ class Product(models.Model):
     )
     price = models.FloatField()
     stock = models.PositiveSmallIntegerField(default=0)
+    is_home = models.BooleanField(default=False)
     status = models.CharField(
         default=DEFAULT_STATUS, 
         choices=STATUS,

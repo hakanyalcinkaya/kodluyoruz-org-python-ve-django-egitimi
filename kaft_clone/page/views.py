@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import (
+    render, 
+    redirect, 
+    get_object_or_404,  # object i getirir veya 404 hatasi verir
+)
 from django.contrib import messages
 from django.utils.text import slugify
 from .models import Carousel, Page
 from .forms import CarouselModelForm, PageModelForm
 from django.contrib.admin.views.decorators import staff_member_required
-from product.models import Category
+from product.models import Category, Product
 
 STATUS = "published"
 
@@ -16,10 +20,19 @@ def index(request):
         status=STATUS,
     ).exclude(cover_image='')
 
-    # context['categories'] = Category.objects.filter(
-    #     status=STATUS
-    # ).order_by('title')
+    products = Product.objects.filter(
+        is_home=True,
+        status=STATUS,
+    )
+    context['products'] = products
+
     return render(request, 'home/index.html', context)
+
+
+def page_show(request, slug):
+    context = dict()
+    context['page'] = get_object_or_404(Page, slug=slug)
+    return render(request, 'page/page.html', context)
 
 
 def manage_list(request):
